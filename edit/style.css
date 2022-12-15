@@ -1,0 +1,47 @@
+body {
+}
+
+.section-holder {
+  /* margin-top: 2%; */
+  padding: 10px 25px;
+  background-color: #fff;
+  width: 50vw;
+  align-self: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-data-personal {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 75px;
+}
+
+.basic-info > p:nth-child(1){
+  font-size: 24px;
+  font-family: Poppins-SemiBold;
+}
+.basic-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.section-data > img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+h5 {
+  font-family: Poppins-Bold;
+}

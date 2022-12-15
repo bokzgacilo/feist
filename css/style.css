@@ -1,0 +1,412 @@
+/* GLOBAL */
+
+:root {
+  --header-gray: #E7E7E7;
+  --sidebar-gray: #F3F3F3;
+  --festi-green: #0E8136;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@font-face {
+  font-family: InterTight;
+  src: url(poppins/InterTight.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 415px) {
+  
+}
+
+section {
+  padding: 7px;
+  display: flex;
+  /* align-items: center; */
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.banner > img {
+  width: 180px;
+  height: auto;
+}
+
+body {
+  font-size: 16px;
+  font-family: Ubuntu-Regular;
+}
+
+header {
+  /* background-color: var(--header-gray); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button {
+  padding: 5px;
+}
+/* PER CLASS */
+
+/* SEARCH BAR */
+.ssbb {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.ssbb > input {
+  width: 100%;
+  padding: 5px 5px 5px 15px;
+  margin-right: 5px; 
+  font-family: Ubuntu-Medium;
+  font-size: 16px;
+  border: 1px solid rgb(156, 156, 156);
+  outline: none;
+}
+
+.ccbb {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.ccbb > * {
+  margin-left: 5px;
+  width: auto;
+}
+
+.banner {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 50%;
+}
+
+.controls {
+  width: 30%;
+  justify-content: flex-end;
+}
+
+/* SIDENAV */
+.sidenav {
+  width: 20%;
+  /* background-color: var(--sidebar-gray); */
+  flex-direction: column;
+  padding: 15px;  
+}
+
+.sidenav > button {
+  padding: 10px;
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: #00693E;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 18px;
+  /* justify-content: center; */
+}
+
+.filters > a {
+  text-decoration: none;
+  color: white;
+  background-color: #13274F;
+  margin: 4px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+}
+
+.tag-holder {
+  height: 25vh;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag-holder > * {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*  */
+
+.main {
+  width: 80%;
+  flex-direction: row;
+}
+
+.main-left, .main-right {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.main-left {
+  width: 40%;
+  margin-right: 10px;
+}
+
+.main-right {
+  width: 60%;
+}
+
+.masterlist-container {
+  margin-top: 5px;
+  /* background-color: var(--sidebar-gray); */
+  max-height: 80vh;
+  overflow: auto;
+  overflow-x: hidden;
+  /* border: 1px solid rgb(156, 156, 156); */
+  /* border-radius: 5px; */
+  /* padding: 5px; */
+
+}
+
+.masterlist-item {
+  margin: 5px 15px 8px 5px;
+  /* margin-bottom: 8px; */
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  border-radius: 5px;
+  flex-direction: row ;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.masterlist-item:hover {
+  background-color: #ACE1AF;
+  transition: 0.75s;
+  box-shadow: none;
+}
+
+.avatar{
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title > h2 {
+  margin-right: auto;
+}
+
+.dropdown {
+  position: fixed;
+  display: none;
+  top: 6.5%;
+  width: 30vw;
+  /* align-items: center; */
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.message-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-post > img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  z-index: 1;
+  padding: 7px;
+}
+
+
+
+
+/* MODAL */
+
+.addRecordModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  /* width: 40%; */
+  height: 50%;
+  border: 1px solid #888;
+  display: flex;
+  flex-direction: column
+}
+
+.modal-header, .modal-body, .modal-footer {
+  display: flex;
+  /* flex-direction: row; */
+  margin: 15px 0 15px 0;
+  width: 100%;
+}
+
+.modal-body {
+  flex-direction: column;
+}
+
+.modal-body {
+  width: 100%;
+}
+
+.modal-header > button {
+  margin-left: auto;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.input-group > input {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.addRecordForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/*  */
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name > * {
+  margin: 2px 2px 2px 2px;
+}
+
+.profile-name > a {
+  text-decoration: none;
+  color: #3c3c3c;
+  background-color: #FFD700;
+  font-family: Ubuntu-Bold;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.profile-header > img {
+  width: 130px;
+  height: auto;
+  margin-right: 25px;
+}
+
+.sect-title {
+  background-color: rgb(209, 209, 209);
+  padding:5px;
+  margin: 5px 0 5px 0;
+  /* color: white; */
+}
+
+.sect-fields {
+  display: flex;
+  flex-direction: row;
+}
+
+.field-data, .field-title {
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  font-family: Ubuntu-Light;
+}
+
+
+
+.profile_content {
+  border: 1px solid black;
+  margin-top: 5px;
+  padding: 15px;
+}
+
+.saveBTN {
+  display: none;
+}

@@ -1,0 +1,120 @@
+@media only screen and (max-width: 500px) {
+  .section-holder {
+    background-color: #fff;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 10px 75px; */
+    background-color: rgb(245, 245, 245);
+    align-items: center;
+  }
+  .section-data-personal {
+    background-color: rgb(245, 245, 245);
+  }
+  
+  .basic-info > p:nth-child(1){
+    font-size: 20px;
+    font-family: Poppins-SemiBold;
+  }
+  .basic-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+  }
+  
+  .section-data > img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .file-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h5 {
+    font-family: Poppins-Bold;
+  }
+
+  .emergency {
+    display: flex;
+    flex-direction: column;
+    /* font-size: 20px; */
+    font-family: Poppins-SemiBold;
+    /* background-color: rgb(248, 176, 176); */
+  }
+  .emergency > span{
+    color: red;
+  }
+  
+}
+
+/* DESKTOP BREAKPOINT */
+@media only screen and (min-width: 500px) {
+  .print > span {
+    font-weight: 600;
+    color: black;
+  }
+  .details {
+  }
+  .section-holder {
+    /* margin-top: 2%; */
+    padding: 10px 25px;
+    background-color: #fff;
+    width: 50vw;
+    align-self: center;
+    height: 100vh;
+
+  }
+  
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .section-data-personal {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 75px;
+  }
+  
+  .basic-info > p:nth-child(1){
+    font-size: 24px;
+    font-family: Poppins-SemiBold;
+  }
+  .basic-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+  
+  .section-data > img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  h5 {
+    font-family: Poppins-Bold;
+  }
+}
+
+
+.feist, .footer {
+  display: none;
+}

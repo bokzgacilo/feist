@@ -1,0 +1,165 @@
+<?php
+  session_start();
+  
+  include('../connection.php');
+  $uid = $_GET['uid'];
+
+  $tables = ['new_students', 'new_teacher'];
+  $target = '';
+
+  $fullname = '';
+  $lrn = '';
+  $grade = '';
+  $section = '';
+  $picture_url = '';
+  $position = '';
+  $roomID = '';
+
+  foreach ($tables as $table) {
+    $sql = "SELECT * FROM {$table} WHERE profileID=$uid";
+    $result = $conn -> query($sql);
+
+    if(($result -> num_rows) > 0){
+      $target = $table;
+
+      while($basic = $result -> fetch_array()){
+        if($table == 'new_students'){
+          $fullname = $basic['fullname'];
+          $lrn = $basic['lrn'];
+          $grade = $basic['grade'];
+          $section = $basic['section'];
+          $picture_url = $basic['picture_url'];
+        }
+
+        if($table == 'new_teacher'){
+          $fullname = $basic['fullname'];
+          $position = $basic['position'];
+          $picture_url = $basic['picture_url'];
+          if($basic['roomID'] != 0){
+            $selectRoom = $conn -> query("SELECT * FROM rooms WHERE room_id='".$basic['roomID']."'");
+
+            while($room = $selectRoom -> fetch_array()){
+              $section = $room['name'];
+            }
+
+          }else {
+            echo $roomID = 'Not Adviser';
+          }
+        }
+      }
+    }
+  }
+
+  $get = "SELECT * FROM $target WHERE profileID=$uid";
+  $data = $conn -> query($get);
+
+  while($row = $data -> fetch_array()){
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php echo $row['fullname']; ?></title>
+
+  <link rel="stylesheet" href='../css/base.css' media="screen">
+  <link rel="stylesheet" href='style.css' media="screen">
+  <link rel="stylesheet" href='print.css' media="print">
+</head>
+<body >
+  <div class="details container d-flex flex-column justify-content-center">
+    
+    <img src="../uploads/admin/feist-new.png" class="feist">
+    <div class="section-holder">
+      <section class="1" id="basic">
+        <div class="print alert alert-primary" role="alert">
+          Hit <span>Ctrl + P</span> to print.
+        </div>
+        <h5 class="mt-2 mb-2">Basic Information</h5>
+        <div class="section-data">
+          <div class="basic-info">
+            <p><?php echo $fullname; ?></p>
+            <p><?php echo $position; ?></p>
+            <p><?php echo $roomID; ?></p>
+            <p><?php echo $lrn; ?></p>
+            <p><?php echo $grade; ?></p>
+            <a href='../section/index.php?room=<?php echo $section; ?>'><?php echo $section; ?></a>
+          </div>
+          <img src='<?php echo $picture_url; ?>'>
+        </div>
+      </section>
+      <hr>
+      <section class="2" id="basic">
+        <h5 class=" mb-2">Personal Information</h5>
+        <div class="section-data-personal">
+          <?php
+            $personal = "SELECT * FROM profile WHERE profileID=$uid";
+            $perResult = $conn -> query($personal);
+
+            while($personalData = $perResult -> fetch_array()){
+          ?>
+          <div class="row">
+            <div class="col-5">
+              <p>Gender:</p>
+              <p>Age:</p>
+              <p>Religion:</p>
+              <p>Date of Birth:</p>
+              <p>Address:</p>
+              <p>Contact:</p>
+            </div>
+            <div class="col-7">
+              <p><?php echo $personalData['gender']; ?></p>
+              <p><?php echo $personalData['age']; ?></p>
+              <p><?php echo $personalData['religion']; ?></p>
+              <p><?php echo $personalData['date_of_birth']; ?></p>
+              <p><?php echo $personalData['address']; ?></p>
+              <p><?php echo $personalData['contact']; ?></p>
+            </div>
+          </div>
+          <div class="emergency row mt-4">
+            <span>Emergency Contact:</span>
+            <p><?php echo $personalData['guardian']; ?></p>
+            <p><?php echo $personalData['guardian_contact']; ?></p>
+          </div>
+          <?php
+            }
+          ?>
+        </div>
+      </section>
+      <hr>
+      <section class="3" id="basic">
+        <h5>School and Academic Files</h5>
+        <div class="file-list">
+          <?php
+            if ($handle = opendir('../files/' . $fullname)) {
+              while (false !== ($entry = readdir($handle))) {
+                if ($entry != "." && $entry != "..") {
+                  echo "<div class='card mb-2'>
+                  <div class='card-body'>
+                    <a class='' href='../files/$fullname/$entry'>
+                      $entry
+                    </a>
+                  </div>
+                </div>";
+                }
+              }
+              closedir($handle);
+          }
+          ?>
+        </div>
+      </section>
+    </div>
+    <div class="footer">
+      Generated by FeIST System. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
+
+<?php
+  }
+  $conn -> close();
+?>

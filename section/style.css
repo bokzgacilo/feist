@@ -1,0 +1,260 @@
+@media only screen and (max-width: 500px) {
+  p, h4, h5 {
+    margin: 0 !important;
+  }
+  
+  .room {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .adviser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+    background-color: #fff;
+  }
+  
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+  
+  body {
+    background-color: rgb(225, 225, 225);
+  }
+  
+  .header {
+    background-color: var(--feistGreen);
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  
+  .member {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .member-sect {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    gap: 15px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+  }
+  
+  .search_result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .student {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+    color: #3c3c3c;
+  }
+  
+  .student > button {
+    border: none;
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+    outline: none;
+  }
+
+  .custom-modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000d4;
+    z-index: 11;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .custom-modal-content {
+    width: 100vw;
+    background-color: #fff;
+  }
+
+  .custom-modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: var(--feistGreen);
+    color: #fff;
+    justify-content: space-between;
+  }
+
+  .custom-modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+/* DESKTOP BREAKPOINT */
+@media only screen and (min-width: 500px) {
+  p, h4, h5 {
+    margin: 0 !important;
+  }
+  
+  .room {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section {
+    margin-top: 2%;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .adviser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 10px;
+    border-bottom: 1px black solid;
+    background-color: #fff;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+  
+  body {
+    background-color: rgb(225, 225, 225);
+  }
+  
+  .header {
+    background-color: var(--feistGreen);
+    padding: 10px;
+    color: #fff;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+  }
+  
+  .member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+  
+  .member {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .add-member {
+    
+  }
+  
+  .member-sect {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 25px;
+    gap: 15px;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+  }
+  
+  .search_result {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .student {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+    color: #3c3c3c;
+  }
+  
+  .student > button {
+    border: none;
+    background-color: transparent;
+    color: blue;
+    text-decoration: underline;
+    outline: none;
+  }
+
+  .custom-modal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000000d4;
+    z-index: 11;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .custom-modal-content {
+    margin-top: 2%;
+    width: 40vw;
+    background-color: #fff;
+  }
+
+  .custom-modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: var(--feistGreen);
+    color: #fff;
+    justify-content: space-between;
+  }
+
+  .custom-modal-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+

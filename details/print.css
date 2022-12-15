@@ -1,0 +1,119 @@
+@media print {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .print {
+    display: none;
+  }
+
+  .feist {
+    display: block;
+    width: 15%;
+    height: auto;
+    margin-bottom: 1.5em;
+    align-self: flex-start;
+  }
+
+  .footer {
+    display: block;
+    margin-top: auto;
+    color: rgb(207, 207, 207);
+  }
+
+  .col-5 > p {
+    font-weight: 600;
+  }
+
+  p, span, a {
+    font-size: 1.25rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .emergency {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column !important;
+  }
+  
+  .section-holder {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #basic, #not-basic {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .col-5 {
+    width: 40vw;
+  }
+
+  .col-7 {
+    width: 60vw;
+  }
+  
+  .section-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    align-items: center;
+  }
+
+  .section-data-personal {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .basic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+  }
+  
+  .section-data > img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .file-list {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
