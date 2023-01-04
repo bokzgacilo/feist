@@ -48,7 +48,7 @@
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "The file ". htmlspecialchars(basename( $_FILES["fileToUpload"]["name"])). " has been uploaded. <br>";
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    // echo "Sorry, there was an error uploading your file.";
   }
 
   $gender = $_POST['gender'];
@@ -85,7 +85,7 @@
     }
   }
 
-  echo "<a href='../'>Done</a>";
+  echo "<a href=\"javascript:history.go(-2)\">Done</a>";
 
   $conn -> close();
 ?>

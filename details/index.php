@@ -43,7 +43,7 @@
             }
 
           }else {
-            echo $roomID = 'Not Adviser';
+            // echo $roomID = 'Not Adviser';
           }
         }
       }

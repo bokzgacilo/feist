@@ -3,8 +3,6 @@
   $record = $_POST['records'];
   $table = $_POST['table'];
 
-  // print_r($record);
-  // echo $record . ' , ' . $table;
   if($table == 'students'){
     foreach ($record as $key) {
       $delete = "DELETE FROM new_students WHERE profileID=$key";
@@ -18,7 +16,7 @@
 
   if($table == 'faculty'){
     foreach ($record as $key) {
-      $delete = "DELETE FROM new_students WHERE profileID=$key";
+      $delete = "DELETE FROM new_teacher WHERE profileID=$key";
       $conn -> query($delete);
 
       if($conn -> query("DELETE FROM profile WHERE profileID=$key")){

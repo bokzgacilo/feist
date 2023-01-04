@@ -10,13 +10,15 @@
 
   // $name_data = implode(',', $name);
   $username = 'teacher-' . $profileID;
-  $password = 'feist';  
+  $passinfodata = explode(',', $name);
+  $whitespaceremoved = str_replace(" ", "", $passinfodata[0]);
 
+  $password =  strtolower($whitespaceremoved) . $profileID;  
   $sql = "INSERT INTO new_teacher (username, password, fullname, position, profileID) VALUES ('$username', '$password', '$name', '$position', $profileID)";
   $result = $conn -> query($sql);
 
   if($result){
-    header('location: index.php?success=Record added');
+    header('location: index.php?table=faculty&message=Record Added');
     $conn -> query("INSERT INTO profile (profileID) VALUES ($profileID)");
   }
   

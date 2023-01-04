@@ -102,9 +102,9 @@
               </a>";
             }
           ?>
-          <a>
+          <!-- <a>
             Change Display Picture
-          </a>
+          </a> -->
           <a href="../logout.php">Logout</a>
         </div>
       </div>

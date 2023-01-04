@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  var target_name;
   
   $('.import-button').click(function(){
     $('#importModal').show();
@@ -7,6 +7,37 @@ $(document).ready(function(){
   
   $('.create-room').click(function(){
     $('#createRoomModal').show();
+  })
+
+  $('.change-password-button').click(function(){
+    $('#change-password').show();
+    
+    var target = $(this).attr('id');
+    var input_element = $('#new-password');
+    target_name = $(this).parent().parent().attr('title');
+
+    input_element.val(target)
+  })
+
+  $("#changePasswordForm").submit(function(event){
+    event.preventDefault();
+
+    $.ajax({
+      type: 'post',
+      url: 'changepassword.php',
+      data: {
+        target: target_name,
+        newPassword: $('#new-password').val()
+      },
+      success: function(response){
+        console.log(response);
+        $('#changePasswordForm')[0].reset();
+
+        alert('Password Change Successfully');
+        
+        $('#change-password').hide();
+      }
+    })
   })
 
   $('.singe-data-button-student').click(function(){
@@ -73,24 +104,22 @@ $(document).ready(function(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const table = urlParams.get('table')
+    
+    let current_element = $(this);
+    let selected = $(this).attr('id');
+    let all_record = [];
 
-    let selected_record = [];
-
-    $.each($("input[name='select[]']:checked"), function(){
-      selected_record.push($(this).val());
-    });
-
-    console.log(selected_record)
+    all_record.push(selected);
 
     $.ajax({
       type: 'post',
       url: 'delete.php',
       data: {
-        records: selected_record,
+        records: all_record,
         table: table
       },
       success: function(response){
-        $("input[name='select[]']:checked").parent().parent().fadeOut();
+        $(current_element).parent().parent().fadeOut();
         // console.log(response)
       }
     })

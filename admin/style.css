@@ -8,62 +8,92 @@
 }
 
 @media screen and (min-width: 500px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    padding: 2px;
-  }
-  
-  .table-action {
+  h4 {
+    font-family: Poppins-Bold;
     display: flex;
     flex-direction: row;
-    gap: 2px;
-    margin-bottom: 10px;
-    font-weight: 600;
     align-items: center;
+    gap: 10px;
   }
 
-  .table-action > a {
-    text-decoration: none;
-    color: #3c3c3c;
+  .div-table-content-action {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.25s;
   }
 
-  .table-action > a:hover {
-    background-color: rgb(235, 235, 235);
+  .div-table-content {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 0;
+
+    border-bottom: 1px rgb(221, 221, 221) solid;
+  }
+
+  .div-table-header {
+    font-family: Poppins-Bold;
+    text-align: center;
+    background-color: var(--feistGreen);
+    color: #fff;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .div-table-content-action > span , .div-table-content-action > a {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.15s;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: black;
+  }
+
+  .div-table-content-action > span:hover, .div-table-content-action > a:hover  {
+    background-color: rgb(57, 57, 57);
+    color: #fff;
+  }
+
+  .div-table-content:hover {
+    cursor: pointer;
+    background-color: rgb(221, 221, 221);
+  }
+
+  .view-room {
+    display: flex;
+    flex-direction: row;
   }
 
   p {
     margin: 0;
     padding: 0;
   }
-  
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    padding: 2px 10px 2px 0;
-  }
+
   main {
     display: flex;
     flex-direction: row; 
+    width: 100vw;
   }
   
   aside {
     display: flex;
+    background-color: var(--feistGreen);
+    height: 100vh;
     flex-direction: column;
-    padding: 10px;
-    width: 20vw;
+    width: 20%;
+    color: #fff;
   }
-  
+
   input[name='student[]']{
     border: none;
     outline: none;
@@ -73,40 +103,53 @@
     display: flex;
     flex-direction: column;
   }
+
+  .main-table > h4 {
+    font-family: Poppins-Bold;
+  }
+
+  .main-table {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0 10px;
+  }
+
+  .table-content {
+    max-height: 85vh;
+    overflow: auto;
+  }
   
   .sidebar {
-    background-color: #ffffff;
     padding: 15px;
-    border-radius: 5px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   .sidebar > a {
     width: 100%;
-    padding: 8px 5px 8px 15px;
+    padding: 12px 5px 12px 15px;
     border-radius: 8px;
     border: 5px;
     text-decoration: none;
-    color: #3c3c3c;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: 0.1s;
+    /* transition: 0.1s; */
     cursor: pointer;
+    margin-bottom: 0.25rem;
   }
   
   .sidebar > a:hover {
-    color: #fff !important  ;
-    background-color: var(--feistGreen);
+    color: rgb(0, 0, 0) !important  ;
+    font-family: Poppins-SemiBold;
+    background-color: #fff;
   }
-  
-  .dashboard {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-  }
+
   
   .dashboard-body {
+    width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -174,48 +217,11 @@
     background-color: rgb(226, 226, 226);
   }
   
-  /*  TABLE */
-  #customers {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
-    /* border: 1px rgb(200, 200, 200) solid; */
-  }
-  
-  .table-header > th:last-of-type {
-    border-top-right-radius: 10px;
-  }
-  .table-header > th:first-of-type {
-    border-top-left-radius: 10px;
-  }
-  
-  .table-header {
-    
-    /* border-radius: 10px; */
-  }
-
-  th {
-    padding: 10px !important;
-  }
-  
-
-
-  #customers td{
-    padding: 5px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    background-color: var(--feistGreen);
-    color: white;
-  } 
-  
   .selector, .avatar {
     width: 5%;
   }
-  .avatar > img {
+
+  .avatar{
     width: 40px;
     height: 40px;
     border-radius: 50px;
