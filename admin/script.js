@@ -104,7 +104,7 @@ $(document).ready(function(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const table = urlParams.get('table')
-    
+
     let current_element = $(this);
     let selected = $(this).attr('id');
     let all_record = [];
@@ -120,7 +120,7 @@ $(document).ready(function(){
       },
       success: function(response){
         $(current_element).parent().parent().fadeOut();
-        // console.log(response)
+        console.log(response)
       }
     })
   })

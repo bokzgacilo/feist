@@ -3,7 +3,7 @@
 
   include('../connection.php');
 
-  $getLogs = $conn -> query("SELECT * FROM logs");
+  $getLogs = $conn -> query("SELECT * FROM logs ORDER BY date DESC");
 
 ?>
 

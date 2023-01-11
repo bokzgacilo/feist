@@ -10,6 +10,8 @@
 
       if($conn -> query("DELETE FROM profile WHERE profileID=$key")){
         echo 'Profile successfully deleted';
+        $new_log = $key . ' was successfully deleted';
+        $conn -> query("INSERT INTO logs (message, date) VALUES ('$new_log', NOW())");
       }
     } 
   }
@@ -21,6 +23,8 @@
 
       if($conn -> query("DELETE FROM profile WHERE profileID=$key")){
         echo 'Profile successfully deleted';
+        $new_log = $key . ' was successfully deleted';
+        $conn -> query("INSERT INTO logs (message, date) VALUES ('$new_log', NOW())");
       }
     } 
   }
