@@ -8,6 +8,10 @@
 }
 
 @media screen and (min-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+
   h4 {
     font-family: Poppins-Bold;
     display: flex;
@@ -128,8 +132,8 @@
   
   .sidebar > a {
     width: 100%;
-    padding: 12px 5px 12px 15px;
-    border-radius: 8px;
+    padding: 10px 5px 10px 15px;
+    border-radius: 5px;
     border: 5px;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -138,7 +142,7 @@
     align-items: center;
     /* transition: 0.1s; */
     cursor: pointer;
-    margin-bottom: 0.25rem;
+    /* margin-bottom: 0.25rem; */
   }
   
   .sidebar > a:hover {

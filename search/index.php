@@ -159,12 +159,12 @@
             <p class="panel-item-position" title='Teacher IV'>Teacher IV <span><?php echo $teacherIVcount; ?></span></p>
           </div>
       </div>
-      <hr>
+      <!-- <hr>
       <h5>Sort By:</h5>
       <div class="sort-list">
         <a href="">Alphabetical A-Z</a>
         <a href="">Alphabetical Z-A</a>
-      </div>
+      </div> -->
     </div>
 
     <div class="right-container">
