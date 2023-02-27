@@ -1,3 +1,7 @@
+function openDashboard() {
+  $('.main-table').load('dashboard.html')
+}
+
 $(document).ready(function(){
   var target_name;
   
@@ -127,6 +131,21 @@ $(document).ready(function(){
 
   
 })
+
+function levelUp(id){
+  $.ajax({
+    type: 'post',
+    url: 'levelup.php',
+    data: {
+      roomid: id
+    },
+    success: (response) => {
+      // console.log(response)
+      alert('Room and Student Level Changed.');
+      window.location.reload();
+    }
+  })
+}
 
 function setCoord(target){
   $('.advisers').hide();

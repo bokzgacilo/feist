@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="../js/jquery.js"></script>
   <script defer src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
   <div id="importModal" class="import-modal">
@@ -176,6 +178,10 @@
         <a href='../search/'>
           <i class="fa-solid fa-magnifying-glass me-2"></i>
           <span>Search</span>
+        </a>
+        <a onclick="openDashboard()">
+          <i class="fa-solid fa-chart-line me-2"></i>
+          <span>Dashboard</span>
         </a>
         <a href='index.php?table=students'>
           <i class="fa-solid fa-eye me-2"></i>

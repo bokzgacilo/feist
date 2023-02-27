@@ -148,6 +148,9 @@
               <a class='me-1 view-room' href='../section/index.php?room=".$row['name']."'>
                 <i title='View Room' class='fa-solid fa-user-pen'></i>
               </a>
+              <a class='me-1 view-room' id='".$row['room_id']."' onclick='levelUp(this.id)'>
+              <i class='fa-solid fa-up'></i>
+              </a>
             </div>
             <p class='col'>".$row['room_id']."</p>
             <p class='col'>".$row['name']."</p>

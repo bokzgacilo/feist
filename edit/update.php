@@ -59,6 +59,13 @@
   $contact = $_POST['contact'];
   $guardian = $_POST['guardian'];
   $guardian_contact = $_POST['guardian_contact'];
+  $minority = $_POST['minority'];
+  $pwd = 'No';
+  if(isset($_POST['pwd'])){
+    $pwd = 'Yes';
+  }else {
+    $pwd = 'No';
+  }
 
   $tables = ['new_students', 'new_teacher'];
 
@@ -74,7 +81,9 @@
       address='$address',
       contact='$contact',
       guardian='$guardian',
-      guardian_contact='$guardian_contact'
+      guardian_contact='$guardian_contact',
+      minority='$minority',
+      is_pwd='$pwd'
     WHERE profileID=$uid";
     $update = $conn -> query($query);
 

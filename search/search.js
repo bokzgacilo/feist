@@ -8,6 +8,20 @@ function getAll(){
   })
 }
 
+function getAllMyStudent(teacherName){
+  $.ajax({
+    type: 'get',
+    url: 'getAllMyStudents.php',
+    data: {
+      teacherName: teacherName
+    },
+    success: (response) => {
+      console.log(response)
+      $('.right-container').html(response);
+    }
+  })
+}
+
 function openItem(id){
   $.ajax({
     type: 'post',

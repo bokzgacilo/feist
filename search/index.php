@@ -128,10 +128,11 @@
     </div>
   </header>
   <nav>
-    <a class="nav-item" href='../search/' id="all">All</a>
+    <a class="nav-item" id='<?php echo $user_name; ?>' onclick="getAllMyStudent(this.id)">My Students</a>
+    <a class="nav-item" href='../search/' id="all">All Students</a>
     <a class="nav-item" href='index.php?show=students' id="students">Students</a>
-    <a class="nav-item" href='index.php?show=teachers' id="teachers">Teachers</a>
-    <a class="nav-item" href='index.php?show=rooms' id="rooms">Rooms</a>
+    <!-- <a class="nav-item" href='index.php?show=teachers' id="teachers">Teachers</a> -->
+    <!-- <a class="nav-item" href='index.php?show=rooms' id="rooms">Rooms</a> -->
   </nav>
   <main class="result-container">
     <div class="left-container">

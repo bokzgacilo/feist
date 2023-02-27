@@ -128,6 +128,28 @@
             <input class="mb-1 form-control form-control-sm" type='text' name='guardian' value="<?php echo $personalData['guardian']; ?>">
             <input class="mb-1 form-control form-control-sm" type='text' name='guardian_contact' value="<?php echo $personalData['guardian_contact']; ?>">
           </div>
+          <div class="emergency row mt-4">
+            <span>Minority: (Please specify, leave blank if not.)</span>
+            <select class="form-select" name='minority' aria-label="Default select example">
+              <option>Not</option>
+              <option>Mangyan</option>
+              <option>Igorot</option>
+              <option>Badjao</option>
+              <option>Bangon</option>
+            </select>
+          </div>
+          <div class="emergency row mt-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name='pwd' value="" id="flexCheckChecked" <?php
+                if($personalData['is_pwd'] != 'No'){
+                  echo 'checked';
+                }
+              ?>>
+              <label class="form-check-label" for="flexCheckChecked">
+                Is PWD (Uncheck if not)
+              </label>
+            </div>
+          </div>
           <?php
             
           ?>
