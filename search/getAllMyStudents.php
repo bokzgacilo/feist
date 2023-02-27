@@ -1,9 +1,10 @@
 <?php
+  session_start();
   include('../connection.php');
 
-  $teacherName = $_GET['teacherName'];
+  // $teacherName = $_GET['teacherName'];
 
-  $sql = "SELECT * FROM new_teacher WHERE fullname='$teacherName'";
+  $sql = "SELECT * FROM new_teacher WHERE fullname='".$_SESSION['name']."'";
 
   $result = $conn -> query($sql);
 

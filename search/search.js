@@ -8,13 +8,10 @@ function getAll(){
   })
 }
 
-function getAllMyStudent(teacherName){
+function getAllMyStudent(){
   $.ajax({
     type: 'get',
     url: 'getAllMyStudents.php',
-    data: {
-      teacherName: teacherName
-    },
     success: (response) => {
       console.log(response)
       $('.right-container').html(response);
@@ -37,6 +34,7 @@ function openItem(id){
 
 
 $(document).ready(function(){
+  getAllMyStudent();
   // getAll();
 
   $('.panel-item-grade').click(function(){

@@ -9,7 +9,7 @@
     if(isset($_GET['show'])){
       $show = $_GET['show'];
     }else {
-      $show = 'all';
+      // $show = 'all';
     }
 
     $user_name = $_SESSION['name'];
@@ -55,7 +55,6 @@
   <title>FeIST - Search</title>
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="search.css">
-
   <script src="../js/jquery.js"></script>
   <script src="search.js"></script>
 </head>
@@ -129,8 +128,8 @@
   </header>
   <nav>
     <a class="nav-item" id='<?php echo $user_name; ?>' onclick="getAllMyStudent(this.id)">My Students</a>
-    <a class="nav-item" href='../search/' id="all">All Students</a>
-    <a class="nav-item" href='index.php?show=students' id="students">Students</a>
+    <!-- <a class="nav-item" href='../search/' id="all">All Students</a>
+    <a class="nav-item" href='index.php?show=students' id="students">Students</a> -->
     <!-- <a class="nav-item" href='index.php?show=teachers' id="teachers">Teachers</a> -->
     <!-- <a class="nav-item" href='index.php?show=rooms' id="rooms">Rooms</a> -->
   </nav>
