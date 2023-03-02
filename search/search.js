@@ -34,8 +34,8 @@ function openItem(id){
 
 
 $(document).ready(function(){
-  getAllMyStudent();
-  // getAll();
+  // getAllMyStudent();
+  getAll();
 
   $('.panel-item-grade').click(function(){
     var selector = $(this).attr('title');

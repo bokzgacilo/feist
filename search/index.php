@@ -115,10 +115,10 @@
       <img src='../uploads/admin/feist-new.png'>
     </div>
     <form class='search-form'>
-      <div class="search-input">
+      <!-- <div class="search-input">
         <i class="fa-solid fa-magnifying-glass me-2"></i>
         <input type="search" name='keyword' placeholder="Start Searching">
-      </div>
+      </div> -->
     </form>
     <div class="right">
       <div class="account" title='<?php echo $user_name; ?>'>
@@ -134,41 +134,8 @@
     <!-- <a class="nav-item" href='index.php?show=rooms' id="rooms">Rooms</a> -->
   </nav>
   <main class="result-container">
-    <div class="left-container">
-      <div class="filter-list">
-        <h5 class="mt-4 mb-4">Filter By:</h5>
-        <button class="accordion">
-          Grade (Students)
-        </button>
-          <div class="panel">
-            <p class="panel-item-grade" title='Not set'>Not Assigned <span><?php echo $not_assigned ?></span></p>
-            <p class="panel-item-grade" title='Grade 7'>Grade 7 <span><?php echo $grade7count; ?></span></p>
-            <p class="panel-item-grade" title='Grade 8'>Grade 8 <span><?php echo $grade8count; ?></span></span></p>
-            <p class="panel-item-grade" title='Grade 9'>Grade 9 <span><?php echo $grade9count; ?></span></span></p>
-            <p class="panel-item-grade" title='Grade 10'>Grade 10 <span><?php echo $grade10count; ?></span></span></p>
-            <p class="panel-item-grade" title='Grade 11'>Grade 11 <span><?php echo $grade11count; ?></span></span></p>
-            <p class="panel-item-grade" title='Grade 12'>Grade 12 <span><?php echo $grade12count; ?></span></span></p>
-          </div>
-        <button class="accordion">
-          Position (Teachers)
-        </button>
-          <div class="panel">
-            <p class="panel-item-position" title='Teacher I'>Teacher I <span><?php echo $teacherIcount; ?></span></p>
-            <p class="panel-item-position" title='Teacher II'>Teacher II <span><?php echo $teacherIIcount; ?></span></p>
-            <p class="panel-item-position" title='Teacher III'>Teacher III <span><?php echo $teacherIIIcount; ?></span></p>
-            <p class="panel-item-position" title='Teacher IV'>Teacher IV <span><?php echo $teacherIVcount; ?></span></p>
-          </div>
-      </div>
-      <!-- <hr>
-      <h5>Sort By:</h5>
-      <div class="sort-list">
-        <a href="">Alphabetical A-Z</a>
-        <a href="">Alphabetical Z-A</a>
-      </div> -->
-    </div>
-
     <div class="right-container">
-
+      <p>Getting Students</p>
     </div>
   </main>
   <footer>
@@ -192,37 +159,37 @@
     }
   </script>
   <script>
-    $(document).ready(function(){
-      var getShow = '<?php echo $show; ?>';
-      console.log(getShow)
+    // $(document).ready(function(){
+    //   var getShow = '<?php echo $show; ?>';
+    //   console.log(getShow)
 
-      if(getShow == 'rooms'){
-        $.ajax({
-        type: 'post',
-        url: 'getRooms.php',
-        data: {
-          show: getShow
-        },
-        success: function(response){
+    //   if(getShow == 'rooms'){
+    //     $.ajax({
+    //     type: 'post',
+    //     url: 'getRooms.php',
+    //     data: {
+    //       show: getShow
+    //     },
+    //     success: function(response){
           
-          $('.right-container').html(response)
-        }
-      })
-      }else {
-        $.ajax({
-          type: 'post',
-          url: 'get.php',
-          data: {
-            show: getShow
-          },
-          success: function(response){
-            $('.right-container').html(response)
+    //       $('.right-container').html(response)
+    //     }
+    //   })
+    //   }else {
+    //     $.ajax({
+    //       type: 'post',
+    //       url: 'get.php',
+    //       data: {
+    //         show: getShow
+    //       },
+    //       success: function(response){
+    //         $('.right-container').html(response)
             
-          }
-        })
-      }
+    //       }
+    //     })
+    //   }
       
-    })
+    // })
   </script>
 </body>
 </html>
