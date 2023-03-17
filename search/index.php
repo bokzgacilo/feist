@@ -115,10 +115,16 @@
       <img src='../uploads/admin/feist-new.png'>
     </div>
     <form class='search-form'>
-      <!-- <div class="search-input">
-        <i class="fa-solid fa-magnifying-glass me-2"></i>
-        <input type="search" name='keyword' placeholder="Start Searching">
-      </div> -->
+      <?php
+        if(isset($_SESSION['role'])){
+          echo "
+            <div class='search-input'>
+              <i class='fa-solid fa-magnifying-glass me-2'></i>
+              <input type='search' name='keyword' placeholder='Start Searching'>
+            </div>
+          ";
+        }
+      ?>
     </form>
     <div class="right">
       <div class="account" title='<?php echo $user_name; ?>'>
@@ -127,11 +133,22 @@
     </div>
   </header>
   <nav>
-    <a class="nav-item" id='<?php echo $user_name; ?>' onclick="getAllMyStudent(this.id)">My Students</a>
-    <!-- <a class="nav-item" href='../search/' id="all">All Students</a>
-    <a class="nav-item" href='index.php?show=students' id="students">Students</a> -->
-    <!-- <a class="nav-item" href='index.php?show=teachers' id="teachers">Teachers</a> -->
-    <!-- <a class="nav-item" href='index.php?show=rooms' id="rooms">Rooms</a> -->
+    
+
+    <?php
+      if(isset($_SESSION['role'])){
+        echo "
+          <a class='nav-item' href='index.php?show=students' id='students'>Students</a>
+          <a class='nav-item' href='index.php?show=teachers' id='teachers'>Teachers</a>
+          <a class='nav-item' href='index.php?show=rooms' id='rooms'>Rooms</a>
+        ";
+      }else {
+        echo "
+          <a class='nav-item' id='$user_name' onclick='getAllMyStudent(this.id)'>My Students</a>
+        ";
+      }
+    ?>
+   
   </nav>
   <main class="result-container">
     <div class="right-container">
@@ -159,37 +176,56 @@
     }
   </script>
   <script>
-    // $(document).ready(function(){
-    //   var getShow = '<?php echo $show; ?>';
-    //   console.log(getShow)
+    function getAll(){
+      $.ajax({
+        type: 'post',
+        url: 'getAll.php',
+        success: function(response){
+          $('.right-container').html(response);
+        }
+      })
+    }
 
-    //   if(getShow == 'rooms'){
-    //     $.ajax({
-    //     type: 'post',
-    //     url: 'getRooms.php',
-    //     data: {
-    //       show: getShow
-    //     },
-    //     success: function(response){
+    function getAllMyStudent(){
+      $.ajax({
+        type: 'get',
+        url: 'getAllMyStudents.php',
+        success: (response) => {
+          $('.right-container').html(response);
+        }
+      })
+    }
+
+    $(document).ready(function(){
+      var getShow = '<?php echo $show; ?>';
+
+      if(getShow == 'rooms'){
+        $.ajax({
+        type: 'post',
+        url: 'getRooms.php',
+        data: {
+          show: getShow
+        },
+        success: function(response){
           
-    //       $('.right-container').html(response)
-    //     }
-    //   })
-    //   }else {
-    //     $.ajax({
-    //       type: 'post',
-    //       url: 'get.php',
-    //       data: {
-    //         show: getShow
-    //       },
-    //       success: function(response){
-    //         $('.right-container').html(response)
+          $('.right-container').html(response)
+        }
+      })
+      }else {
+        $.ajax({
+          type: 'post',
+          url: 'get.php',
+          data: {
+            show: getShow
+          },
+          success: function(response){
+            $('.right-container').html(response)
             
-    //       }
-    //     })
-    //   }
+          }
+        })
+      }
       
-    // })
+    })
   </script>
 </body>
 </html>

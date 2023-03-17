@@ -4,6 +4,7 @@
 
   // $teacherName = $_GET['teacherName'];
 
+  $sql = "";
   $sql = "SELECT * FROM new_teacher WHERE fullname='".$_SESSION['name']."'";
 
   $result = $conn -> query($sql);

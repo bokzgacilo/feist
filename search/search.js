@@ -1,23 +1,4 @@
-function getAll(){
-  $.ajax({
-    type: 'post',
-    url: 'getAll.php',
-    success: function(response){
-      $('.right-container').html(response);
-    }
-  })
-}
 
-function getAllMyStudent(){
-  $.ajax({
-    type: 'get',
-    url: 'getAllMyStudents.php',
-    success: (response) => {
-      console.log(response)
-      $('.right-container').html(response);
-    }
-  })
-}
 
 function openItem(id){
   $.ajax({
@@ -35,7 +16,7 @@ function openItem(id){
 
 $(document).ready(function(){
   // getAllMyStudent();
-  getAll();
+  // getAll();
 
   $('.panel-item-grade').click(function(){
     var selector = $(this).attr('title');

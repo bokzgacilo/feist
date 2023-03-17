@@ -1,8 +1,16 @@
 <?php
   session_start();
   include('../connection.php');
+  $sql = "";
 
+  if($_SESSION['role'] == 'Admin'){
   $sql = "SELECT * FROM new_teacher WHERE fullname='".$_SESSION['name']."'";
+
+  }else {
+    $sql = "SELECT * FROM new_teacher WHERE fullname='".$_SESSION['name']."'";
+
+  }
+
 
   $result = $conn -> query($sql);
 
